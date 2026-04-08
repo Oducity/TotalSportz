@@ -1,4 +1,4 @@
-const cultout = "football-players-search?search=m";
+const cultout = "football-players-search?search=m";//this is the para
 
 export default async function getApiData(para, api) {
   const url = `https://free-api-live-football-data.p.rapidapi.com/${para}`;

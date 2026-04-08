@@ -1,7 +1,0 @@
-const myAppiKey = "d5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686";
-
-import { lastModify, copyRight } from "./js/lastmodified.mjs";
-
-
-lastModify();
-copyRight();
