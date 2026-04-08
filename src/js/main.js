@@ -1,7 +1,10 @@
 const myAppiKey = "d5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686";
 
 import { lastModify, copyRight } from "./lastmodified.mjs";
+import displayHeroPhotos from "./displayHeroPhotos.mjs";
+const path = "../public/json/home.json";
 
+displayHeroPhotos(path);
 
 lastModify();
 copyRight();
