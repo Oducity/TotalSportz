@@ -1,0 +1,57 @@
+{
+  "hero": [
+    {
+      "id": "hero-image1",
+      "name": "Trophy",
+      "imageurl": "../src/images/hero1.webp",
+      "description": "A player happily raising and kissing a trophy after victory."
+    },
+    {
+      "name": "Hero-image2",
+      "imageurl": "../src/images/hero2.webp",
+      "description": "A photo of a club team about to start a competition",
+      "location": {
+        "stadium": "Samuel Ogbemudia stadium",
+        "state": "Edo",
+        "city": "Benin City",
+        "country": "Nigeria"
+      }
+    },
+    {
+      "id": "hero-image3",
+      "name": "Wembley Stadium",
+      "imageurl": "../src/images/hero3.webp",
+      "description": "A photo of wembley stadium",
+      "location": {
+        "stadium": "Wembley Stadium",
+        "city": "Borough of Brent",
+        "state": "London",
+        "country": "England"
+      }
+    },
+    {
+      "id": "hero-image4",
+      "name": "Wembley Stadium",
+      "imageurl": "../src/images/hero4.webp",
+      "description": "A photo of wembley stadium",
+      "location": {
+        "stadium": "Wembley Stadium",
+        "city": "Borough of Brent",
+        "state": "London",
+        "country": "England"
+      }
+    },
+    {
+      "id": "hero-image5",
+      "name": "MCG Stadium",
+      "imageurl": "../src/images/hero5.webp",
+      "description": "A photo of MCG stadium",
+      "location": {
+        "stadium": "MCG Stadium",
+        "city": "Victoria Island",
+        "state": "Melbourne",
+        "country": "Australia"
+      }
+    }
+  ]
+}
