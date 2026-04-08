@@ -1,10 +1,13 @@
 const myAppiKey = "d5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686";
 
 import { lastModify, copyRight } from "./lastmodified.mjs";
-import displayHeroPhotos from "./displayHeroPhotos.mjs";
-const path = "../public/json/home.json";
+import getHeroData from "./displayHeroPhotos.mjs";
+const api = "";
+const repo = "TotalSportz";
+const path = "src/public/json";
+const jsonfile = "home.json";
 
-displayHeroPhotos(path);
+getHeroData(repo, path, jsonfile);
 
 lastModify();
 copyRight();

@@ -1,5 +1,5 @@
 //// vite.config.js
-//import { defineConfig } from "vite";
+import { defineConfig } from "vite";
 //
 //export default defineConfig({
 //  // Your configuration options here, e.g.:
@@ -15,16 +15,43 @@
 //    }
 //});
 
-
 // vite.config.js
-export default {
-  server: {
-    proxy: {
-      '/api': {
-        target: 'http://api.football-data.org/v4',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
-      }
-    }
+//export default {
+//  server: {
+//    proxy: {
+//      '/api': {
+//        target: 'http://api.football-data.org/v4',
+//        changeOrigin: true,
+//        rewrite: (path) => path.replace(/^\/api/, '')
+//      }
+//    }
+//  }
+//}
+
+export default defineConfig(({ command}) => {
+  if (command == "serve") {
+    return {
+      server: {
+        proxy: {
+          "/api": {
+            target: "https://oducity.github.io",
+            changeOrigin: true,
+            rewrite: (path) => path.replace(/^\/api/, ""),
+          },
+        },
+      },
+    };
+  } else {
+    return {
+      server: {
+        proxy: {
+          "/api": {
+            target: "http://api.football-data.org/v4",
+            changeOrigin: true,
+            rewrite: (path) => path.replace(/^\/api/, ""),
+          },
+        },
+      },
+    };
   }
-}
+});
