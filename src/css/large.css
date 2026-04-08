@@ -1,0 +1,9 @@
+@media screen and (min-width: 54rem){
+    .body header .head-image {
+        width: 12rem;
+    }
+
+    .body header span {
+        font-size: 4.4rem;
+    }
+}
