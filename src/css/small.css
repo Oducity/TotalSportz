@@ -1,4 +1,4 @@
-:root {
+/*:root {
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
@@ -293,4 +293,128 @@ code {
     right: 0;
     border-right-color: var(--border);
   }
+}*/
+
+:root {
+  --green-color: #004F2D;
+  --blue-color: #002798;
+  --white-color: #FFFFFF;
+  --carbon-black: #031c0c;
+  --red-color: #FF0000;
+  --grey-color: #828886;
+  --navtext-color: #e3e3e3;
+  --allborder-radius: .8rem;
+  --regular-border: 2px solid;
+  --heading-font-family: "Sofia", sans-serif;
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Lato" sans-serif;
+}
+
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /*grid-template-columns: repeat(4, 1fr);*/
+  padding: .4rem .4rem 0 .4rem;
+  background-color: var(--blue-color);
+}
+
+
+header img {
+  /*grid-column: 1/2;*/
+  max-width: 320px;
+  border: var(--regular-border) var(--green-color);
+  border-radius: var(--allborder-radius);
+  margin: .5rem 0 0 .5rem;
+}
+
+.site-name {
+  /*grid-column: 2/5;*/
+  font-size: 2.5rem;
+  font-family: var(--heading-font-family);
+  color: var(--white-color);
+  margin: 0 auto;
+}
+nav {
+  background-color: var(--carbon-black);
+  padding-left: 0;
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid var(--carbon-black);
+  border-radius: var(--allborder-radius);
+}
+li {
+  list-style-type: none;
+  border-radius: .5rem;
+}
+nav li a {
+  color: var(--navtext-color);
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+
+footer{
+  background-color: var(--blue-color);
+  display: grid;
+  border: 2px solid var(--carbon-black);
+}
+
+footer section, footer div {
+  margin-top: .5rem;
+  border-top: 2px solid var(--carbon-black);
+}
+
+.social {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.footer h2{
+  grid-column: 1/4;
+  font-family: "Sofia";
+  color: var(--white-color);
+  text-align: center;
+  margin: .5rem auto;
+  border-bottom: var(--regular-border) var(--grey-color);
+  max-width: 50%;
+}
+
+.demonstration {
+  grid-column: 1/4;
+}
+
+.demonstration span{
+  background-color: var(--white-color);
+  padding: .2rem;
+  color: var(--red-color);
+  border: var(--regular-border) var(--grey-color);
+  border-radius: var(--allborder-radius);
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.social-list {
+  text-align: center;
+  margin-top: 1.2rem;
+}
+ 
+.social p a{
+  color: var(--white-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+footer p {
+  font-size: 1.2rem;
+  color: var(--white-color);
+  font-family: "Lato", sans-serif;
+  text-align: center;
 }
