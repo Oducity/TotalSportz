@@ -10,7 +10,7 @@ export default async function displayHomeCards() {
       myKey,
       fileType,
     );
-    console.log(data);
+
     let homeTeam = "";
     let awayTeam = "";
     data.teams.forEach(team => {
@@ -20,13 +20,14 @@ export default async function displayHomeCards() {
             awayTeam = team.name;
         }
     });
+
     const fixturesSection = document.querySelector("#fixtures");
     fixturesSection.innerHTML = "";
     const fixturesHeading = document.createElement("h2");
     fixturesHeading.innerHTML = `
     ${homeTeam}&nbsp; <span class="vesus">VS</span> &nbsp;${awayTeam}
     `;
-    //fixturesSection.appendChild(fixturesHeading);
+    
     const div = document.createElement("div");
     div.innerHTML = `
     <p> <span>League:</span><span>${data.schedule.league_name}</span></p>
@@ -73,9 +74,5 @@ export default async function displayHomeCards() {
     </div>
     `;
     fixturesSection.appendChild(fixturesHeading);
-    fixturesSection.appendChild(div);
-
-
-
-    
+    fixturesSection.appendChild(div);    
 }
