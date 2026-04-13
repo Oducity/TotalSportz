@@ -139,7 +139,6 @@ h2{
 
 tr :first-child, .th{
   background-color: var(--grey-color);
-  color: var();
 }
 tr .td{
   background-color: rgb(180, 176, 176);
