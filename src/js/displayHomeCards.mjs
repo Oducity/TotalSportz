@@ -10,7 +10,7 @@ export default async function displayHomeCards() {
       myKey,
       fileType,
     );
-    console.log(data);
+
     let homeTeam = "";
     let awayTeam = "";
     data.teams.forEach(team => {
@@ -20,13 +20,14 @@ export default async function displayHomeCards() {
             awayTeam = team.name;
         }
     });
+
     const fixturesSection = document.querySelector("#fixtures");
     fixturesSection.innerHTML = "";
     const fixturesHeading = document.createElement("h2");
     fixturesHeading.innerHTML = `
     ${homeTeam}&nbsp; <span class="vesus">VS</span> &nbsp;${awayTeam}
     `;
-    //fixturesSection.appendChild(fixturesHeading);
+    
     const div = document.createElement("div");
     div.innerHTML = `
     <p> <span>League:</span><span>${data.schedule.league_name}</span></p>
@@ -74,8 +75,16 @@ export default async function displayHomeCards() {
     `;
     fixturesSection.appendChild(fixturesHeading);
     fixturesSection.appendChild(div);
-
-
-
     
+    const heroImage = document.querySelector("#hero-image");
+    heroImage.setAttribute(
+      "SRC",
+      "https://github.com/Oducity/TotalSportz/blob/main/src/images/hero1.webp",
+    );
+    heroImage.setAttribute("loading", "lazy");
+    heroImage.setAttribute(
+      "alt",
+      "Hero image of a player happily raising a throphy.",
+    );
+    heroImage.setAttribute("width", "320");
 }
