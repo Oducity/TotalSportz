@@ -74,5 +74,17 @@ export default async function displayHomeCards() {
     </div>
     `;
     fixturesSection.appendChild(fixturesHeading);
-    fixturesSection.appendChild(div);    
+    fixturesSection.appendChild(div);
+    
+    const heroImage = document.querySelector("#hero-image");
+    heroImage.setAttribute(
+      "SRC",
+      "https://github.com/Oducity/TotalSportz/blob/main/src/images/hero1.webp",
+    );
+    heroImage.setAttribute("loading", "lazy");
+    heroImage.setAttribute(
+      "alt",
+      "Hero image of a player happily raising a throphy.",
+    );
+    heroImage.setAttribute("width", "320");
 }
