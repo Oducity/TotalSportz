@@ -1,13 +1,21 @@
 const myAppiKey = "d5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686";
+const footballDataKey = "e8da021158624d73b370068de1e7959b";
+const para = "football-players-search?search=m";
 
+//import setApiAddress from "./getHomeApiAddress.mjs";
+//import displayHomeCards from "./displayHomeCards.mjs";
+import getApiData from "./getData.mjs";
 import { lastModify, copyRight } from "./lastmodified.mjs";
-import getHeroData from "./displayHeroPhotos.mjs";
-const api = "";
-const repo = "TotalSportz";
-const path = "src/public/json";
-const jsonfile = "home.json";
+import displayHeroPhotos from "./displayHeroPhotos.mjs";
+import displayHomeCards from "./displayHomeCards.mjs";
 
-getHeroData(repo, path, jsonfile);
+displayHomeCards();
+//const apiAdd = new setApiAddress();
+//getApiData(footballDataKey);
 
+displayHeroPhotos();
+
+//getApiData(para, myAppiKey);
+//displayEvent();
 lastModify();
 copyRight();
