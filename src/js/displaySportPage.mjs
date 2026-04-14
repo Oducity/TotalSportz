@@ -7,11 +7,16 @@ export default async function displaySportspage() {
     const main = document.querySelector("main");
     main.innerHTML = "";
     main.innerHTML = `
-    <h1 class="sporpage-heading" id="sportpage-heading">Sports</h1>
     <label for="search">
-        <input type="text" id="search" name"search">
-        <button id="search-btn" class"search-btn" type="button">Display Result</button>
+    <input type="text" id="search" name"search">
+    <button id="search-btn" class"search-btn" type="button">Display Result</button>
     </label>
+    <h1 class="sporpage-heading" id="sportpage-heading">Sports</h1>
+    <P>
+    This page gives everything you need about football events, from list of nations who paticipate in local and international football competitions to leagues and mony more.
+    This site can provide information about clubs and players on user's request by using the input field above.
+    It also provide fixtures of football events e.t.c.
+    </P>
     <section id="football-countries" class="football-countries"></sction>
     <section id="team-players" class="team-players"></sction>
     <section id="all-leagues" class="all-leagues"></sction>
