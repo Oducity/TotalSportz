@@ -92,5 +92,6 @@ async function displayAllLeagues() {
         <p><span>Local Name</span> : <span>${league.localizedName}</span></p>
         <p><span>Code</span> : <span>${league.ccode}</span></p>
         `;
+        allLeagues.appendChild(leagDiv);
     });
 };
