@@ -58,9 +58,11 @@ export default async function displaySoccerCountries() {
         countryDiv.innerHTML = `<p><span class="country-name"> ${country.name} </span> : <span class="country-code"> ${country.ccode}</span></p>`;
         allCountries.appendChild(countryDiv);
     });
+
+    displayAllLeagues();
 };
 
-export async function displayAllLeagues() {
+async function displayAllLeagues() {
     const host = "free-api-live-football-data.p.rapidapi.com";
     const endPoint = '/football-get-all-leagues';
     const myKey = 'd5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686';

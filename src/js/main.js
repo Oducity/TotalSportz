@@ -2,10 +2,7 @@ import { lastModify, copyRight } from "./lastmodified.mjs";
 import displayHeroPhotos from "./displayHeroPhotos.mjs";
 import displayHomeCards from "./displayHomeCards.mjs";
 import displaySportspage from "./displaySportPage.mjs";
-import {
-  displaySoccerCountries,
-  displayAllLeagues,
-} from "./DisplaySportCards.mjs";
+import displaySoccerCountries from "./DisplaySportCards.mjs";
 
 const allNav = document.querySelectorAll("a");
 allNav.forEach((navA) => {
@@ -15,7 +12,6 @@ allNav.forEach((navA) => {
       navA.classList.add("pathfinder");
       displaySportspage();
       displaySoccerCountries();
-      displayAllLeagues();
     }
   });
 });
