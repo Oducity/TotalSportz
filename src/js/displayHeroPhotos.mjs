@@ -1,4 +1,5 @@
 import heroImage from './assets/images/hero1.webp';
+
 export default function displayHeroPhotos() {
   document.querySelector("title").textContent = "TotalSportz || Home - page";
   const main = document.querySelector("#main");
