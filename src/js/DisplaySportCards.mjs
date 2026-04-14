@@ -60,7 +60,7 @@ export default async function displaySoccerCountries() {
     });
 };
 
-export default async function displayAllLeagues() {
+export async function displayAllLeagues() {
     const host = "free-api-live-football-data.p.rapidapi.com";
     const endPoint = '/football-get-all-leagues';
     const myKey = 'd5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686';
