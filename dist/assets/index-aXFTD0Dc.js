@@ -62,18 +62,31 @@
     This site can provide information about clubs and players on user's request by using the input field above.
     It also provide fixtures of football events e.t.c.
     </P>
-    <section id="football-countries" class="football-countries"></sction>
-    <section id="team-players" class="team-players"></sction>
-    <section id="all-leagues" class="all-leagues"></sction>
-    <section id="league-teams" class="league-teams"></sction>
-    <section id="league-events" class="league-events"></sction>
+    <div id="sport-cards" class="sport-cards">
+        <section id="football-countries" class="football-countries"></sction>
+        <section id="team-players" class="team-players"></sction>
+        <section></sction>
+        <section id="league-teams" class="league-teams"></sction>
+        <section id="league-events" class="league-events"></sction>
+    </div>
     <dialog>
         <div id="dialog-box" class="dialog-box"></div>
         <button id="close-dialog" class="close-dialog" type="button"></button>
     <dialog>
-    `}async function s(){let e=await i(`free-api-live-football-data.p.rapidapi.com`,`/football-get-all-countries`,`d5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686`,`application/json`);console.log(e);let t=document.querySelector(`#football-countries`);t.innerHTML=``;let n=document.createElement(`h2`);n.innerText=`All Soccer Nations`,t.appendChild(n),e.response.countries.forEach(e=>{let n=document.createElement(`div`);n.innerHTML=`<p><span class="country-name"> ${e.name} </span> : <span class="country-code"> ${e.ccode}</span></p>`,t.appendChild(n)}),c()}async function c(){let e=await i(`free-api-live-football-data.p.rapidapi.com`,`/football-get-all-leagues`,`d5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686`,`application/json`),t=document.querySelector(`#all-leagues`);t.innerHTML=``;let n=document.createElement(`h2`);n.innerText=`All Leagues`,t.appendChild(n),e.response.leagues.forEach(e=>{let n=document.createElement(`div`);n.setAttribute(`class`,`league-container`),n.innerHTML=`
-        <div class="logo-name"><img src="${e.logo}" alt="logo of ${e.name}" width="70" loading="lazy"><span class="league-name">${e.name}</span></div>
+    `}async function s(){let e=await i(`free-api-live-football-data.p.rapidapi.com`,`/football-get-all-leagues`,`d5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686`,`application/json`),t=document.createElement(`section`);t.setAttribute(`id`,`all-leagues`),t.classList=`all-leagues`;let n=document.createElement(`h2`);n.innerText=`All Leagues`,t.appendChild(n),e.response.leagues.forEach(e=>{let n=document.createElement(`div`);n.setAttribute(`class`,`league-container`),n.innerHTML=`
+        <div class="logo-name"><img src="${e.logo}" alt="logo of ${e.name}" width="1" loading="lazy"><span class="league-name">${e.name}</span></div>
         <p><span>Id</span> : <span>${e.id}</span></p>
         <p><span>Local Name</span> : <span>${e.localizedName}</span></p>
         <p><span>Code</span> : <span>${e.ccode}</span></p>
-        `,t.appendChild(n)})}var l=document.querySelectorAll(`a`);l.forEach(e=>{e.addEventListener(`click`,()=>{e.classList.contains(`sports`)&&(l.forEach(e=>e.classList.remove(`pathfinder`)),e.classList.add(`pathfinder`),o(),s())})}),a(),r(),e(),t();
+        `,t.appendChild(n),document.getElementById(`sport-cards`).appendChild(t)})}async function c(){let e=await i(`free-api-live-football-data.p.rapidapi.com`,`/football-get-all-countries`,`d5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686`,`application/json`);console.log(e);let t=document.querySelector(`#football-countries`);t.innerHTML=``;let n=document.createElement(`h2`);n.innerText=`All Soccer Nations`,t.appendChild(n),e.response.countries.forEach(e=>{let n=document.createElement(`div`);n.innerHTML=`<p><span class="country-name"> ${e.name} </span> : <span class="country-code"> ${e.ccode}</span></p>`,t.appendChild(n)}),s(),l()}async function l(){let e=await i(`free-api-live-football-data.p.rapidapi.com`,`/football-get-standing-all?leagueid=47`,`d5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686`,`application/json`),t=document.createElement(`section`);t.setAttribute(`class`,`fixtures`),t.setAttribute(`id`,`fixtures`);let n=document.createElement(`h2`);n.innerText=`Fixture`,document.querySelector(`main`).appendChild(n),e.response.standing.forEach(e=>{let n=e.scoresStr.split(`-`),r=n[0],i=n[1],a=document.createElement(`div`);a.setAttribute(`class`,`fixture-box`),a.id=`fixture-box`,a.innerHTML=`
+            <P class="club-name"> ${e.shortName}</p>
+            <p><span>Position</span> : <span>${e.idx}</span></p>
+            <p><span>Points</span> : <span>${e.pts}</span></p>
+            <p><span>Number Match Played</span> : <span>${e.played}</span></p>
+            <p><span>Wins</span> : <span>${e.wins}</span></p>
+            <p><span>Draws</span> : <span>${e.draws}</span></p>
+            <p><span>Losses</span> : <span>${e.losses}</span></p>
+            <p><span>Goals</span> : <span>${r}</span></p>
+            <p><span>Concided</span> : <span>${i}</span></p>
+            <p><span>Goals-difference</span> : <span>${e.goalConDiff}</span></p>
+        `,t.appendChild(a),document.querySelector(`main`).appendChild(t)})}var u=document.querySelectorAll(`a`);u.forEach(e=>{e.addEventListener(`click`,()=>{e.classList.contains(`sports`)&&(u.forEach(e=>e.classList.remove(`pathfinder`)),e.classList.add(`pathfinder`),o(),c())})}),a(),r(),e(),t();
