@@ -8,8 +8,7 @@ export default async function displayTeamSqad() {
 
   //Pass all parameters to the getApiData().
     const data = await getApiData(host, endPoint, myKey, fileType);
-    console.log(data.players);
-    console.log(data);
+    
 
   const squadSection = document.createElement("section");
   squadSection.setAttribute("id", "all-leagues");
@@ -21,7 +20,6 @@ export default async function displayTeamSqad() {
   //Cosuming data returned from getAoiData() function.
 
     data.players.forEach((item) => {
-    console.log(item);
     const member = item.player;
         const splitBirthDate = member.dateOfBirth.split("T");
         let marketValue = "";

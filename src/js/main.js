@@ -16,6 +16,7 @@ allNav.forEach((navA) => {
     } else if (navA.classList.contains("home")) {
         allNav.forEach((nav) => nav.classList.remove("pathfinder"));
         navA.classList.add("pathfinder");
+        displayHeroPhotos();
         displayHomeCards();
     }
   });
@@ -23,9 +24,10 @@ allNav.forEach((navA) => {
 
 if (document.getElementById("home")) {
     document.getElementById("home").classList.add("pathfinder");
+    displayHeroPhotos();
     displayHomeCards();
 }
-displayHeroPhotos();
+
 
 lastModify();
 copyRight();
