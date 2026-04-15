@@ -1,24 +1,6 @@
 import getApiData from "./getData.mjs";
 import displayAllLeagues from "./displayAllLeagues.mjs";
 
-//export default async function footballCountries() {
-//
-//
-//    //Cosume the returned data from getApiData.
-//    const soccerCountries = await getApiData()
-//
-//};
-
-//export default async function displayFixtures() {
-//
-//}
-
-//
-//
-//
-//
-//
-//
 
 export default async function displaySoccerCountries() {
   //Set all required API parameters.
@@ -63,8 +45,7 @@ export async function displayStanding() {
     h2.innerText = "Fixture";
     document.querySelector("main").appendChild(h2);
 
-    console.log(data);
-
+    //Cosuming data returned from getApiData()
     data.response.standing.forEach((club) => {
         const goalsArr = club.scoresStr.split("-");
         const goals = goalsArr[0];
