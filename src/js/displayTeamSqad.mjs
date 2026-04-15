@@ -8,6 +8,7 @@ export default async function displayTeamSqad() {
 
   //Pass all parameters to the getApiData().
     const data = await getApiData(host, endPoint, myKey, fileType);
+    console.log(data.players);
     console.log(data);
 
   const squadSection = document.createElement("section");
@@ -19,9 +20,16 @@ export default async function displayTeamSqad() {
 
   //Cosuming data returned from getAoiData() function.
 
-  data.players.forEach((item) => {
+    data.players.forEach((item) => {
+    console.log(item);
     const member = item.player;
-    const splitBirthDate = member.dateOfBirth.split("T");
+        const splitBirthDate = member.dateOfBirth.split("T");
+        let marketValue = "";
+        let cur = "";
+        if (member.proposedMarketValueRaw) {
+            marketValue = member.proposedMarketValueRaw.value;
+            cur = member.proposedMarketValueRaw.currency;
+        }
 
     const playerCard = document.createElement("div");
     playerCard.setAttribute("class", "player-card");
@@ -40,7 +48,7 @@ export default async function displayTeamSqad() {
             <p><span>Preferred Foot</span> : <span>${member.preferredFoot} </span></p>
             <p><span>Gender </span> : <span>${member.gender} </span></p>
             <p><span>Country of Origin </span> : <span>${member.country.name} </span></p>
-            <p><span>proposed Market Value </span> : <span>${member.proposedMarketValueRaw.value}${member.proposedMarketValueRaw.currency} </span></p>
+            <p><span>proposed Market Value </span> : <span>${marketValue}${cur} </span></p>
         `;
       squadSection.appendChild(playerCard);
       document.querySelector("#sport-cards").appendChild(squadSection);
