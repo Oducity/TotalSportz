@@ -87,4 +87,4 @@
             <p><span>Gender </span> : <span>${n.gender} </span></p>
             <p><span>Country of Origin </span> : <span>${n.country.name} </span></p>
             <p><span>proposed Market Value </span> : <span>${i}${a} </span></p>
-        `,t.appendChild(o),document.querySelector(`#sport-cards`).appendChild(t)})}var c=document.querySelectorAll(`a`);c.forEach(e=>{e.addEventListener(`click`,()=>{e.classList.contains(`sports`)&&(c.forEach(e=>e.classList.remove(`pathfinder`)),e.classList.add(`pathfinder`),o(),s())})}),a(),r(),e(),t();
+        `,t.appendChild(o),document.querySelector(`#sport-cards`).appendChild(t)})}var c=document.querySelectorAll(`a`);c.forEach(e=>{e.addEventListener(`click`,()=>{e.classList.contains(`sports`)?(c.forEach(e=>e.classList.remove(`pathfinder`)),e.classList.add(`pathfinder`),o(),s()):e.classList.contains(`home`)&&(c.forEach(e=>e.classList.remove(`pathfinder`)),e.classList.add(`pathfinder`),a())})}),document.getElementById(`home`)&&(document.getElementById(`home`).classList.add(`pathfinder`),a()),r(),e(),t();
