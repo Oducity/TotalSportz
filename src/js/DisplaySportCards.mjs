@@ -1,5 +1,6 @@
 import getApiData from "./getData.mjs";
 import displayAllLeagues from "./displayAllLeagues.mjs";
+import displayTeamSqad from "./displayTeamSqad.mjs";
 
 
 export default async function displaySoccerCountries() {
@@ -27,6 +28,7 @@ export default async function displaySoccerCountries() {
   });
     displayAllLeagues();
     displayStanding();
+    displayTeamSqad();
 }
 
 /************************ Past results ************************/
