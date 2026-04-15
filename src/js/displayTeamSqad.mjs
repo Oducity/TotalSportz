@@ -7,7 +7,8 @@ export default async function displayTeamSqad() {
   const fileType = "application/json";
 
   //Pass all parameters to the getApiData().
-  const data = await getApiData(host, endPoint, myKey, fileType);
+    const data = await getApiData(host, endPoint, myKey, fileType);
+    console.log(data);
 
   const squadSection = document.createElement("section");
   squadSection.setAttribute("id", "all-leagues");
@@ -28,9 +29,9 @@ export default async function displayTeamSqad() {
     playerCard.style.color = member.team.teamColors.text;
     playerCard.innerHTML = `
             <p>${member.name}</p>
-            <p><span Club</span> : <span>${member.team.name} </span></p>
-            <p><spanSport Type</span> : <span>${member.team.sport.name} </span></p>
-            <p><spanTournament </span> : <span>${member.team.tournament.name} </span></p>
+            <p><span>${member.team.name}</span></p>
+            <p><span>Sport Type</span> : <span>${member.team.sport.name} </span></p>
+            <p><span>Tournament </span> : <span>${member.team.tournament.name} </span></p>
             <p><span>Club Country </span> : <span>${member.team.tournament.category.country.name} </span></p>
             <p><span>Position</span> : <span>${member.position[0]} and ${member.position[1]} </span></p>
             <p><span>Jersey Number</span> : <span>${member.jerseyNumber} </span></p>
@@ -39,7 +40,7 @@ export default async function displayTeamSqad() {
             <p><span>Preferred Foot</span> : <span>${member.preferredFoot} </span></p>
             <p><span>Gender </span> : <span>${member.gender} </span></p>
             <p><span>Country of Origin </span> : <span>${member.country.name} </span></p>
-            <p><span>proposed Market Value </span> : <span>${member.proposedMarketValueRaw.value + member.proposedMarketValueRaw.currency} </span></p>
+            <p><span>proposed Market Value </span> : <span>${member.proposedMarketValueRaw.value}${member.proposedMarketValueRaw.currency} </span></p>
         `;
       squadSection.appendChild(playerCard);
       document.querySelector("#sport-cards").appendChild(squadSection);

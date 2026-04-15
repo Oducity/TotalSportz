@@ -12,7 +12,6 @@ export default async function displaySoccerCountries() {
 
   //Pass all parameters to the getApiData().
   const data = await getApiData(host, endPoint, myKey, fileType);
-  console.log(data);
 
   const allCountries = document.querySelector("#football-countries");
   allCountries.innerHTML = ""; //clean or emptied the section element
@@ -68,6 +67,6 @@ export async function displayStanding() {
             <p><span>Goals-difference</span> : <span>${club.goalConDiff}</span></p>
         `;
         section.appendChild(div);
-        document.querySelector("main").appendChild(section);
+        document.querySelector("#sport-cards").appendChild(section);
     });
 };
