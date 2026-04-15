@@ -14,11 +14,17 @@ allNav.forEach((navA) => {
       displaySportspage();
       //displaySoccerCountries();
       displayTeamSqad();
+    } else if (navA.classList.contains("home")) {
+        allNav.forEach((nav) => nav.classList.remove("pathfinder"));
+        navA.classList.add("pathfinder");
+        displayHomeCards();
     }
   });
 });
 
-displayHomeCards();
+if (document.getElementById("home")) {
+    displayHomeCards();
+}
 displayHeroPhotos();
 
 lastModify();
