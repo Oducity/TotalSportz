@@ -23,6 +23,7 @@ allNav.forEach((navA) => {
 });
 
 if (document.getElementById("home")) {
+    document.getElementById("home").classList.add("pathfinder");
     displayHomeCards();
 }
 displayHeroPhotos();
