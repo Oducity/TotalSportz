@@ -3,6 +3,7 @@ import displayAllLeagues from "./displayAllLeagues.mjs";
 import displayTeamSqad from "./displayTeamSqad.mjs";
 
 
+
 export default async function displaySoccerCountries() {
   //Set all required API parameters.
   const host = "free-api-live-football-data.p.rapidapi.com";
