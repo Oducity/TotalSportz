@@ -18,11 +18,6 @@ export default async function displaySportspage() {
     It also provide fixtures of football events e.t.c.
     </P>
     <div id="sport-cards" class="sport-cards">
-        <section id="football-countries" class="football-countries"></sction>
-        <section id="team-players" class="team-players"></sction>
-        <section></sction>
-        <section id="league-teams" class="league-teams"></sction>
-        <section id="league-events" class="league-events"></sction>
     </div>
     <dialog>
         <div id="dialog-box" class="dialog-box"></div>

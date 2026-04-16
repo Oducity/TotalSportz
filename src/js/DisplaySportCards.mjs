@@ -1,7 +1,5 @@
 import getApiData from "./getData.mjs";
 
-
-
 export default async function displaySoccerCountries() {
   //Set all required API parameters.
   const host = "free-api-live-football-data.p.rapidapi.com";
@@ -12,7 +10,9 @@ export default async function displaySoccerCountries() {
   //Pass all parameters to the getApiData().
   const data = await getApiData(host, endPoint, myKey, fileType);
 
-  const allCountries = document.querySelector("#football-countries");
+  const allCountries = document.createElement("section");
+  allCountries.setAttribute("class", "all-countries");
+  allCountries.setAttribute("id", "all-countries");
   allCountries.innerHTML = ""; //clean or emptied the section element
   const h2 = document.createElement("h2");
   h2.innerText = "All Soccer Nations";
@@ -24,35 +24,36 @@ export default async function displaySoccerCountries() {
     countryDiv.innerHTML = `<p><span class="country-name"> ${country.name} </span> : <span class="country-code"> ${country.ccode}</span></p>`;
     allCountries.appendChild(countryDiv);
   });
-    
-    displayStanding();
+  document.querySelector("#sport-cards").appendChild(allCountries);
+
+  displayStanding();
 }
 
 /************************ Past results ************************/
 
 export async function displayStanding() {
-    const host = "free-api-live-football-data.p.rapidapi.com";
-    const endPoint = "/football-get-standing-all?leagueid=47";
-    const myKey = "d5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686";
-    const fileType = "application/json";
+  const host = "free-api-live-football-data.p.rapidapi.com";
+  const endPoint = "/football-get-standing-all?leagueid=47";
+  const myKey = "d5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686";
+  const fileType = "application/json";
 
-    const data = await getApiData(host, endPoint, myKey, fileType);
-    const section = document.createElement("section");
-    section.setAttribute("class", "fixtures");
-    section.setAttribute("id", "fixtures");
-    const h2 = document.createElement("h2");
-    h2.innerText = "Fixture";
-    document.querySelector("main").appendChild(h2);
+  const data = await getApiData(host, endPoint, myKey, fileType);
+  const section = document.createElement("section");
+  section.setAttribute("class", "fixtures");
+  section.setAttribute("id", "fixtures");
+  const h2 = document.createElement("h2");
+  h2.innerText = "Fixture";
+  document.querySelector("main").appendChild(h2);
 
-    //Cosuming data returned from getApiData()
-    data.response.standing.forEach((club) => {
-        const goalsArr = club.scoresStr.split("-");
-        const goals = goalsArr[0];
-        const conceded = goalsArr[1];
-        const div = document.createElement("div");
-        div.setAttribute("class", "fixture-box");
-        div.id = "fixture-box";
-        div.innerHTML = `
+  //Cosuming data returned from getApiData()
+  data.response.standing.forEach((club) => {
+    const goalsArr = club.scoresStr.split("-");
+    const goals = goalsArr[0];
+    const conceded = goalsArr[1];
+    const div = document.createElement("div");
+    div.setAttribute("class", "fixture-box");
+    div.id = "fixture-box";
+    div.innerHTML = `
             <P class="club-name"> ${club.shortName}</p>
             <p><span>Position</span> : <span>${club.idx}</span></p>
             <p><span>Points</span> : <span>${club.pts}</span></p>
@@ -64,7 +65,7 @@ export async function displayStanding() {
             <p><span>Concided</span> : <span>${conceded}</span></p>
             <p><span>Goals-difference</span> : <span>${club.goalConDiff}</span></p>
         `;
-        section.appendChild(div);
-        document.querySelector("#sport-cards").appendChild(section);
-    });
-};
+    section.appendChild(div);
+  });
+  document.querySelector("#sport-cards").appendChild(section);
+}

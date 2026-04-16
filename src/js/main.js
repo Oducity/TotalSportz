@@ -1,10 +1,8 @@
 import { lastModify, copyRight } from "./lastmodified.mjs";
 import displayHeroPhotos from "./displayHeroPhotos.mjs";
-import {
-  displayHomeCards,
-  displaySoccerCountries,
-} from "./displayHomeCards.mjs";
+import displayHomeCards from "./displayHomeCards.mjs";
 import displaySportspage from "./displaySportPage.mjs";
+import displaySoccerCountries from "./DisplaySportCards.mjs";
 import displayAllLeagues from "./displayAllLeagues.mjs";
 import displayTeamSqad from "./displayTeamSqad.mjs";
 

@@ -27,6 +27,6 @@ export default async function displayAllLeagues() {
         <p><span>Code</span> : <span>${league.ccode}</span></p>
         `;
       allLeagues.appendChild(leagDiv);
-      document.getElementById("sport-cards").appendChild(allLeagues);
-  });
-}
+    });
+    document.getElementById("sport-cards").appendChild(allLeagues);
+};
