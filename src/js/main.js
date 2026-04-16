@@ -11,7 +11,7 @@ allNav.forEach((navA) => {
       allNav.forEach((nav) => nav.classList.remove("pathfinder"));
       navA.classList.add("pathfinder");
       displaySportspage();
-      //displaySoccerCountries();
+      displaySoccerCountries();
       displayTeamSqad();
     } else if (navA.classList.contains("home")) {
         allNav.forEach((nav) => nav.classList.remove("pathfinder"));
