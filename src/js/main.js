@@ -5,7 +5,6 @@ import {
   displaySoccerCountries,
 } from "./displayHomeCards.mjs";
 import displaySportspage from "./displaySportPage.mjs";
-import displayTeamSqad from "./displayTeamSqad.mjs";
 import displayAllLeagues from "./displayAllLeagues.mjs";
 import displayTeamSqad from "./displayTeamSqad.mjs";
 
