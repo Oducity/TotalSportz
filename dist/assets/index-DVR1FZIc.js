@@ -63,17 +63,28 @@
     It also provide fixtures of football events e.t.c.
     </P>
     <div id="sport-cards" class="sport-cards">
-        <section id="football-countries" class="football-countries"></sction>
-        <section id="team-players" class="team-players"></sction>
-        <section></sction>
-        <section id="league-teams" class="league-teams"></sction>
-        <section id="league-events" class="league-events"></sction>
     </div>
     <dialog>
         <div id="dialog-box" class="dialog-box"></div>
         <button id="close-dialog" class="close-dialog" type="button"></button>
     <dialog>
-    `}async function s(){let e=await i(`sofascore.p.rapidapi.com`,`/teams/get-squad?teamId=38`,`d5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686`,`application/json`),t=document.createElement(`section`);t.setAttribute(`id`,`all-leagues`),t.classList=`all-leagues`;let n=document.createElement(`h2`);n.innerText=`Team Squad`,t.appendChild(n),e.players.forEach(e=>{let n=e.player,r=n.dateOfBirth.split(`T`),i=``,a=``;n.proposedMarketValueRaw&&(i=n.proposedMarketValueRaw.value,a=n.proposedMarketValueRaw.currency);let o=document.createElement(`div`);o.setAttribute(`class`,`player-card`),o.style.backgroundColor=n.team.teamColors.primary,o.style.color=n.team.teamColors.text,o.innerHTML=`
+    `}async function s(){let e=await i(`free-api-live-football-data.p.rapidapi.com`,`/football-get-all-countries`,`d5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686`,`application/json`),t=document.createElement(`section`);t.setAttribute(`class`,`all-countries`),t.setAttribute(`id`,`all-countries`),t.innerHTML=``;let n=document.createElement(`h2`);n.innerText=`All Soccer Nations`,t.appendChild(n),e.response.countries.forEach(e=>{let n=document.createElement(`div`);n.innerHTML=`<p><span class="country-name"> ${e.name} </span> : <span class="country-code"> ${e.ccode}</span></p>`,t.appendChild(n)}),document.querySelector(`#sport-cards`).appendChild(t),c()}async function c(){let e=await i(`free-api-live-football-data.p.rapidapi.com`,`/football-get-standing-all?leagueid=47`,`d5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686`,`application/json`),t=document.createElement(`section`);t.setAttribute(`class`,`fixtures`),t.setAttribute(`id`,`fixtures`);let n=document.createElement(`h2`);n.innerText=`Fixture`,document.querySelector(`main`).appendChild(n),e.response.standing.forEach(e=>{let n=e.scoresStr.split(`-`),r=n[0],i=n[1],a=document.createElement(`div`);a.setAttribute(`class`,`fixture-box`),a.id=`fixture-box`,a.innerHTML=`
+            <P class="club-name"> ${e.shortName}</p>
+            <p><span>Position</span> : <span>${e.idx}</span></p>
+            <p><span>Points</span> : <span>${e.pts}</span></p>
+            <p><span>Number Match Played</span> : <span>${e.played}</span></p>
+            <p><span>Wins</span> : <span>${e.wins}</span></p>
+            <p><span>Draws</span> : <span>${e.draws}</span></p>
+            <p><span>Losses</span> : <span>${e.losses}</span></p>
+            <p><span>Goals</span> : <span>${r}</span></p>
+            <p><span>Concided</span> : <span>${i}</span></p>
+            <p><span>Goals-difference</span> : <span>${e.goalConDiff}</span></p>
+        `,t.appendChild(a)}),document.querySelector(`#sport-cards`).appendChild(t)}async function l(){let e=await i(`free-api-live-football-data.p.rapidapi.com`,`/football-get-all-leagues`,`d5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686`,`application/json`),t=document.createElement(`section`);t.setAttribute(`id`,`all-leagues`),t.classList=`all-leagues`;let n=document.createElement(`h2`);n.innerText=`All Leagues`,t.appendChild(n),e.response.leagues.forEach(e=>{let n=document.createElement(`div`);n.setAttribute(`class`,`league-container`),n.innerHTML=`
+        <div class="logo-name"><img src="${e.logo}" alt="logo of ${e.name}" width="1" loading="lazy"><span class="league-name">${e.name}</span></div>
+        <p><span>Id</span> : <span>${e.id}</span></p>
+        <p><span>Local Name</span> : <span>${e.localizedName}</span></p>
+        <p><span>Code</span> : <span>${e.ccode}</span></p>
+        `,t.appendChild(n)}),document.getElementById(`sport-cards`).appendChild(t)}async function u(){let e=await i(`sofascore.p.rapidapi.com`,`/teams/get-squad?teamId=38`,`d5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686`,`application/json`),t=document.createElement(`section`);t.setAttribute(`id`,`all-leagues`),t.classList=`all-leagues`;let n=document.createElement(`h2`);n.innerText=`Team Squad`,t.appendChild(n),e.players.forEach(e=>{let n=e.player,r=n.dateOfBirth.split(`T`),i=``,a=``;n.proposedMarketValueRaw&&(i=n.proposedMarketValueRaw.value,a=n.proposedMarketValueRaw.currency);let o=document.createElement(`div`);o.setAttribute(`class`,`player-card`),o.style.backgroundColor=n.team.teamColors.primary,o.style.color=n.team.teamColors.text,o.innerHTML=`
             <p>${n.name}</p>
             <p><span>${n.team.name}</span></p>
             <p><span>Sport Type</span> : <span>${n.team.sport.name} </span></p>
@@ -87,4 +98,4 @@
             <p><span>Gender </span> : <span>${n.gender} </span></p>
             <p><span>Country of Origin </span> : <span>${n.country.name} </span></p>
             <p><span>proposed Market Value </span> : <span>${i}${a} </span></p>
-        `,t.appendChild(o),document.querySelector(`#sport-cards`).appendChild(t)})}var c=document.querySelectorAll(`a`);c.forEach(e=>{e.addEventListener(`click`,()=>{e.classList.contains(`sports`)?(c.forEach(e=>e.classList.remove(`pathfinder`)),e.classList.add(`pathfinder`),o(),displaySoccerCountries(),s()):e.classList.contains(`home`)&&(c.forEach(e=>e.classList.remove(`pathfinder`)),e.classList.add(`pathfinder`),r(),a())})}),document.getElementById(`home`)&&(document.getElementById(`home`).classList.add(`pathfinder`),r(),a()),e(),t();
+        `,t.appendChild(o),document.querySelector(`#sport-cards`).appendChild(t)})}var d=document.querySelectorAll(`a`);d.forEach(e=>{e.addEventListener(`click`,()=>{e.classList.contains(`sports`)?(d.forEach(e=>e.classList.remove(`pathfinder`)),e.classList.add(`pathfinder`),o(),s(),l(),u()):e.classList.contains(`home`)&&(d.forEach(e=>e.classList.remove(`pathfinder`)),e.classList.add(`pathfinder`),r(),a())})}),document.getElementById(`home`)&&(document.getElementById(`home`).classList.add(`pathfinder`),r(),a()),e(),t();
