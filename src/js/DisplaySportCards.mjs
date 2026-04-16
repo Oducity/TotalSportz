@@ -1,6 +1,4 @@
 import getApiData from "./getData.mjs";
-import displayAllLeagues from "./displayAllLeagues.mjs";
-import displayTeamSqad from "./displayTeamSqad.mjs";
 
 
 
@@ -26,9 +24,8 @@ export default async function displaySoccerCountries() {
     countryDiv.innerHTML = `<p><span class="country-name"> ${country.name} </span> : <span class="country-code"> ${country.ccode}</span></p>`;
     allCountries.appendChild(countryDiv);
   });
-    displayAllLeagues();
+    
     displayStanding();
-    displayTeamSqad();
 }
 
 /************************ Past results ************************/
