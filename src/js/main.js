@@ -22,6 +22,10 @@ allNav.forEach((navA) => {
       navA.classList.add("pathfinder");
       displayHeroPhotos();
       displayHomeCards();
+    } else if (navA.classList.contains("contact-Us")) {
+      allNav.forEach((nav) => nav.classList.remove("pathfinder"));
+      navA.classList.add("pathfinder");
+      displayContactUsPage();
     }
   });
 });
