@@ -5,6 +5,7 @@ import displaySportspage from "./displaySportPage.mjs";
 import displaySoccerCountries from "./DisplaySportCards.mjs";
 import displayAllLeagues from "./displayAllLeagues.mjs";
 import displayTeamSqad from "./displayTeamSqad.mjs";
+import displayContactUsPage from "./contactUsPage.mjs";
 
 
 const allNav = document.querySelectorAll("a");
