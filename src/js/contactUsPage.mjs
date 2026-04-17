@@ -2,6 +2,7 @@ export default async function displayContactUsPage() {
   const main = document.querySelector("main");
   main.innerHTML = `
         <h1>${document.querySelector("#contact-Us").textContent}</h1>
+        <p>Register with us to get latest update on sport.</p>
         <div class="form-container">
             <form action="thanks.html" method="GET" id="reg-form" class="reg-form">
                 <h2>Registration Form</h2>
@@ -19,6 +20,14 @@ export default async function displayContactUsPage() {
                         <span class="email-span">Your Email: <strong class="req">&#10033;</strong></span>
                         <input type="email" class="email" id="email" name="email" title="email" autocomplete="email" placeholder="example@email.com" required>
                     </label>
+                </fieldset>
+                <fieldseld>
+                <legend>Select Your Prefered Team:</legend>
+                    <select class="select">
+                    </select>
+                    
+
+                    
                 </fieldset>
                 <label for="submit">
                     <button type="submit" name="submit" id="submit" class="submit">Register Me</button>
