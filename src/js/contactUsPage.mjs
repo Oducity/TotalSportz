@@ -1,7 +1,7 @@
 export default async function displayContactUsPage(){
     const main = document.querySelector("main");
     main.innerHTML = `
-        <h1>${document.querySelector("#contact-us").textContent}</h1>
+        <h1>${document.querySelector("#contact-Us").textContent}</h1>
         <div class="form-container">
             <form action="thanks.html" method="GET" id="reg-form" class="reg-form">
                 <h2>Registration Form</h2>

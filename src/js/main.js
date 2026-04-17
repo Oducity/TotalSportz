@@ -25,7 +25,7 @@ allNav.forEach((navA) => {
       displayHomeCards();
     } else if (navA.classList.contains("contact-Us")) {
       allNav.forEach((nav) => nav.classList.remove("pathfinder"));
-      navA.classList.add("pathfinder");
+      nav.classList.add("pathfinder");
       displayContactUsPage();
     }
   });
