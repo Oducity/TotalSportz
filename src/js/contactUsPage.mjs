@@ -21,13 +21,18 @@ export default async function displayContactUsPage() {
                         <input type="email" class="email" id="email" name="email" title="email" autocomplete="email" placeholder="example@email.com" required>
                     </label>
                 </fieldset>
-                <fieldseld>
-                <legend>Select Your Prefered Team:</legend>
-                    <select class="select">
-                    </select>
-                    
 
+                <fieldset class="all-interest">
+                    <legend>Pick All Your Interest</legend>
+
+                </fieldset>
+
+                <fieldseld>
+                    <legend>Teams Option</legend>
+                    <label>Select Your Prefered Team:</label>
+                    <select class="preferred-team">
                     
+                    </select>
                 </fieldset>
                 <label for="submit">
                     <button type="submit" name="submit" id="submit" class="submit">Register Me</button>
