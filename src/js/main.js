@@ -5,6 +5,8 @@ import displaySportspage from "./displaySportPage.mjs";
 import displaySoccerCountries from "./DisplaySportCards.mjs";
 import displayAllLeagues from "./displayAllLeagues.mjs";
 import displayTeamSqad from "./displayTeamSqad.mjs";
+import displayContactUsPage from "./contactUsPage.mjs";
+import displayFormItems from "./displayFormItems.mjs";
 
 
 const allNav = document.querySelectorAll("a");
@@ -22,6 +24,11 @@ allNav.forEach((navA) => {
       navA.classList.add("pathfinder");
       displayHeroPhotos();
       displayHomeCards();
+    } else if (navA.classList.contains("contact-Us")) {
+      allNav.forEach((nav) => nav.classList.remove("pathfinder"));
+      navA.classList.add("pathfinder");
+      displayContactUsPage();
+      displayFormItems();
     }
   });
 });
