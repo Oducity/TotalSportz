@@ -6,6 +6,7 @@ import displaySoccerCountries from "./DisplaySportCards.mjs";
 import displayAllLeagues from "./displayAllLeagues.mjs";
 import displayTeamSqad from "./displayTeamSqad.mjs";
 import displayContactUsPage from "./contactUsPage.mjs";
+import displayFormItems from "./displayFormItems.mjs";
 
 
 const allNav = document.querySelectorAll("a");
@@ -27,6 +28,7 @@ allNav.forEach((navA) => {
       allNav.forEach((nav) => nav.classList.remove("pathfinder"));
       navA.classList.add("pathfinder");
       displayContactUsPage();
+      displayFormItems();
     }
   });
 });
