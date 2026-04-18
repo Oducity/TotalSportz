@@ -8,11 +8,11 @@ export default async function displayContactUsPage() {
                 <h2>Registration Form</h2>
                 <fieldset>
                     <legend>Customer's Information</legend>
-                    <Label for="first-name" class="fname-label">
+                    <Label for="firstname" class="fname-label">
                         <span class="fname-span">Your First Name: <strong class="req">&#10033;</strong></span>
                         <input type="text" id="firstname" name="firstname" placeholder="Please Enter You Given Name" autocomplete="given-name" title="E.g; Dr." required>
                     </label>
-                    <label>
+                    <label for="lastname">
                         <span class="lname-span">Your Last Name: <strong class="req">&#10033;</strong></span>
                         <input type="text" id="lastname" name="lastname" class="last-name" placeholder="Please Enter You Family Name" autocomplete="family-name" title="No title" required>
                     </label>
@@ -22,17 +22,14 @@ export default async function displayContactUsPage() {
                     </label>
                 </fieldset>
 
-                <fieldset class="all-interest">
-                    <legend>Pick All Your Interest</legend>
-
-                </fieldset>
-
                 <fieldseld>
                     <legend>Teams Option</legend>
-                    <label>Select Your Prefered Team:</label>
-                    <select class="preferred-team">
-                    
-                    </select>
+                    <label for="preferred-team">
+                        <span>Select Your Prefered Team:<strong class="req">&#10033;</strong></span>
+                        <select id="preferred-team" name="preferred-team" class="preferred-team">
+                            <option>Select Your Team</option>
+                        </select>
+                    </label>
                 </fieldset>
                 <label for="submit">
                     <button type="submit" name="submit" id="submit" class="submit">Register Me</button>
