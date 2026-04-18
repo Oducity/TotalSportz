@@ -98,4 +98,40 @@
             <p><span>Gender </span> : <span>${n.gender} </span></p>
             <p><span>Country of Origin </span> : <span>${n.country.name} </span></p>
             <p><span>proposed Market Value </span> : <span>${i}${a} </span></p>
-        `,t.appendChild(o),document.querySelector(`#sport-cards`).appendChild(t)})}var d=document.querySelectorAll(`a`);d.forEach(e=>{e.addEventListener(`click`,()=>{e.classList.contains(`sports`)?(d.forEach(e=>e.classList.remove(`pathfinder`)),e.classList.add(`pathfinder`),o(),s(),l(),u()):e.classList.contains(`home`)&&(d.forEach(e=>e.classList.remove(`pathfinder`)),e.classList.add(`pathfinder`),r(),a())})}),document.getElementById(`home`)&&(document.getElementById(`home`).classList.add(`pathfinder`),r(),a()),e(),t();
+        `,t.appendChild(o),document.querySelector(`#sport-cards`).appendChild(t)})}async function d(){let e=document.querySelector(`main`);e.innerHTML=`
+        <h1>${document.querySelector(`#contact-Us`).textContent}</h1>
+        <p>Register with us to get latest update on sport.</p>
+        <div class="form-container">
+            <form action="thanks.html" method="GET" id="reg-form" class="reg-form">
+                <h2>Registration Form</h2>
+                <fieldset>
+                    <legend>Customer's Information</legend>
+                    <Label for="firstname" class="fname-label">
+                        <span class="fname-span">Your First Name: <strong class="req">&#10033;</strong></span>
+                        <input type="text" id="firstname" name="firstname" placeholder="Please Enter You Given Name" autocomplete="given-name" title="E.g; Dr." required>
+                    </label>
+                    <label for="lastname">
+                        <span class="lname-span">Your Last Name: <strong class="req">&#10033;</strong></span>
+                        <input type="text" id="lastname" name="lastname" class="last-name" placeholder="Please Enter You Family Name" autocomplete="family-name" title="No title" required>
+                    </label>
+                    <label for="email" class="email=label">
+                        <span class="email-span">Your Email: <strong class="req">&#10033;</strong></span>
+                        <input type="email" class="email" id="email" name="email" title="email" autocomplete="email" placeholder="example@email.com" required>
+                    </label>
+                </fieldset>
+
+                <fieldseld>
+                    <legend>Teams Option</legend>
+                    <label for="preferred-team">
+                        <span>Select Your Prefered Team:<strong class="req">&#10033;</strong></span>
+                        <select id="preferred-team" name="preferred-team" class="preferred-team">
+                            <option>Select Your Team</option>
+                        </select>
+                    </label>
+                </fieldset>
+                <label for="submit">
+                    <button type="submit" name="submit" id="submit" class="submit">Register Me</button>
+                </label>
+            </form>
+        </div>
+    `}async function f(){let e=await i(`free-api-live-football-data.p.rapidapi.com`,`/football-get-all-leagues`,`d5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686`,`application/json`),t=document.getElementById(`preferred-team`);e.response.leagues.forEach(e=>{let n=document.createElement(`option`);n.value=e.id,n.innerText=e.name,t.appendChild(n)})}var p=document.querySelectorAll(`a`);p.forEach(e=>{e.addEventListener(`click`,()=>{e.classList.contains(`sports`)?(p.forEach(e=>e.classList.remove(`pathfinder`)),e.classList.add(`pathfinder`),o(),s(),l(),u()):e.classList.contains(`home`)?(p.forEach(e=>e.classList.remove(`pathfinder`)),e.classList.add(`pathfinder`),r(),a()):e.classList.contains(`contact-Us`)&&(p.forEach(e=>e.classList.remove(`pathfinder`)),e.classList.add(`pathfinder`),d(),f())})}),document.getElementById(`home`)&&(document.getElementById(`home`).classList.add(`pathfinder`),r(),a()),e(),t();
