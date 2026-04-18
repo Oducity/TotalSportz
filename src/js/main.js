@@ -7,6 +7,7 @@ import displayAllLeagues from "./displayAllLeagues.mjs";
 import displayTeamSqad from "./displayTeamSqad.mjs";
 import displayContactUsPage from "./contactUsPage.mjs";
 import displayFormItems from "./displayFormItems.mjs";
+import { displayStanding } from "./DisplaySportCards.mjs";
 
 
 const allNav = document.querySelectorAll("a");
@@ -17,6 +18,7 @@ allNav.forEach((navA) => {
       navA.classList.add("pathfinder");
       displaySportspage();
       displaySoccerCountries();
+      displayStanding();
       displayAllLeagues();
       displayTeamSqad();
     } else if (navA.classList.contains("home")) {
