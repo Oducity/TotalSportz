@@ -25,8 +25,6 @@ export default async function displaySoccerCountries() {
     allCountries.appendChild(countryDiv);
   });
   document.querySelector("#sport-cards").appendChild(allCountries);
-
-  displayStanding();
 }
 
 /************************ Past results ************************/
@@ -43,7 +41,7 @@ export async function displayStanding() {
   section.setAttribute("id", "fixtures");
   const h2 = document.createElement("h2");
   h2.innerText = "Fixture";
-  document.querySelector("main").appendChild(h2);
+  section.appendChild(h2);
 
   //Cosuming data returned from getApiData()
   data.response.standing.forEach((club) => {

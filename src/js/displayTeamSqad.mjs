@@ -11,8 +11,8 @@ export default async function displayTeamSqad() {
     
 
   const squadSection = document.createElement("section");
-  squadSection.setAttribute("id", "all-leagues");
-  squadSection.classList = "all-leagues";
+  squadSection.setAttribute("id", "team-squad");
+  squadSection.classList = "team-squad";
   const h2 = document.createElement("h2");
   h2.innerText = "Team Squad";
   squadSection.appendChild(h2);
@@ -34,7 +34,7 @@ export default async function displayTeamSqad() {
     playerCard.style.backgroundColor = member.team.teamColors.primary;
     playerCard.style.color = member.team.teamColors.text;
     playerCard.innerHTML = `
-            <p>${member.name}</p>
+            <p class="player-name">${member.name}</p>
             <p><span>${member.team.name}</span></p>
             <p><span>Sport Type</span> : <span>${member.team.sport.name} </span></p>
             <p><span>Tournament </span> : <span>${member.team.tournament.name} </span></p>

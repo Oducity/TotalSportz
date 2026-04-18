@@ -2,7 +2,7 @@ export default async function displayContactUsPage() {
   const main = document.querySelector("main");
   main.innerHTML = `
         <h1>${document.querySelector("#contact-Us").textContent}</h1>
-        <p>Register with us to get latest update on sport.</p>
+        <p>Register with us to get latest update on sport. Simple, enter your first name, last name and your email address. After that, select your preferred league of interest and hit the register me button. Boom, you start receiving updates at your convenience. It's as simple as that.</p>
         <div class="form-container">
             <form action="thanks.html" method="GET" id="reg-form" class="reg-form">
                 <h2>Registration Form</h2>
@@ -22,10 +22,10 @@ export default async function displayContactUsPage() {
                     </label>
                 </fieldset>
 
-                <fieldseld>
+                <fieldset>
                     <legend>Teams Option</legend>
                     <label for="preferred-team">
-                        <span>Select Your Prefered Team:<strong class="req">&#10033;</strong></span>
+                        <span>Select Your Prefered League:<strong class="req">&#10033;</strong></span>
                         <select id="preferred-team" name="preferred-team" class="preferred-team">
                             <option>Select Your Team</option>
                         </select>
