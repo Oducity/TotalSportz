@@ -19,6 +19,35 @@
   font-family: "Lato" sans-serif;
 }
 
+@keyframes slide{
+  from{
+    transform: translate(100%);
+    opacity: 0;
+    background-color: var(--grey-color);
+    border: 1rem solid var(--green-color);
+    border-radius: 1.2rem;
+  }
+  to{
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes animate-form{
+  from{
+    transform: translate(0);
+    background-color: var(--grey-color);
+    border: 1px solid var(--purple-color);
+    border-radius: 25%;
+  }
+  to{
+    transform: translate(1);
+    background-color: var(--cream-color);
+    border: 1px solid var(--carbon-black);
+    border-radius: 8px;
+  }
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -209,6 +238,9 @@ label[for="search"] {
   }
 }
 
+.sport-cards div{
+  animation: slide 2s ease-in-out;
+}
 
 .sport-cards {
   display: grid;
@@ -298,7 +330,7 @@ label[for="search"] {
   justify-content: center;
   button {
     font-size: 1.4rem;
-    margin: 1.2rem 0;
+    margin: 1.2rem;
     border: var(--regular-border) var(--carbon-black);
     background-color: var(--navtext-color);
     color: var(--submit-text);
@@ -326,8 +358,10 @@ fieldset {
     border: var(--regular-border);
     min-height: 3rem;
     padding: 1rem 1rem 0;
+    animation: animate-form 2s ease-in-out;
   }
 }
+
 
 select > *:first-child {
   -webkit-user-select: none;
