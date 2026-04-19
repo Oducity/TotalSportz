@@ -48,6 +48,19 @@
   }
 }
 
+@keyframes animate-nav {
+  from{
+    transform: translate(1);
+    background-color: var(--white-color);
+    color: var(--carbon-black);
+  }
+  to{
+    transform: translate(-1);
+    background-color: var(--carbon-black);
+    color: var(--navtext-color);
+  }
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -68,6 +81,7 @@ header {
   nav {
     margin: 0;
     padding: 0;
+    animation: animate-nav 2s ease-in-out;
   }
 
   nav ul {
@@ -138,10 +152,12 @@ main img {
 .hero-container img {
   transition: transform 4s;
   transform-style: preserve-3d;
+  
 }
 
 .hero-container img:hover {
   transform: rotateY(360deg);
+  border-radius: 20%;
 }
 main h1 {
   background-color: var(--carbon-black);
