@@ -68,6 +68,7 @@ header {
   nav {
     margin: 0;
     padding: 0;
+    animation: animate-nav 2s ease-in-out;
   }
 
   nav ul {
@@ -115,6 +116,10 @@ nav ul {
   border-radius: var(--allborder-radius);
 }
 
+.nav-list{
+  animation: slide 6s ease-in-out;
+}
+
 li {
   list-style-type: none;
   border-radius: 0.5rem;
@@ -138,12 +143,15 @@ main img {
 .hero-container img {
   transition: transform 4s;
   transform-style: preserve-3d;
+  
 }
 
 .hero-container img:hover {
   transform: rotateY(360deg);
+  border-radius: 20%;
 }
 main h1 {
+  animation: slide 6s ease-in-out;
   background-color: var(--carbon-black);
   color: var(--navtext-color);
   text-align: center;
@@ -197,6 +205,7 @@ main .events {
 }
 
 h2 {
+  animation: slide 6s ease-in-out;
   background-color: var(--carbon-black);
   color: var(--navtext-color);
   font-family: "Sofia", sans-serif;
