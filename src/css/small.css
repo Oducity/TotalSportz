@@ -27,6 +27,47 @@ header {
   background-color: var(--blue-color);
 }
 
+@media screen and (max-width: 22rem) {
+  header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    .head-image{
+      margin: 0 auto;
+    }
+  }
+  nav{
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: .8rem;
+    
+  }
+  li{
+    border-bottom: var(--regular-border) var(--white-color);
+    margin: 1rem 0;
+  }
+
+  label[for="search"]{
+    display: flex;
+    flex-direction: column;
+    input{
+      width: auto;
+      height: auto;
+    }
+  }
+  /*button{
+    font-size: 1.2rem;
+    width: 80%;
+    margin: 0 auto;
+  }*/
+}
+
 header img {
   max-width: 320px;
   border: var(--regular-border) var(--green-color);
@@ -50,6 +91,8 @@ nav ul {
   border: 2px solid var(--carbon-black);
   border-radius: var(--allborder-radius);
 }
+
+
 li {
   list-style-type: none;
   border-radius: 0.5rem;
@@ -147,25 +190,26 @@ tr .td {
 
 label[for="search"] {
   display: grid;
-  .button {
-    max-width: 18rem;
-    min-width: 3rem;
-    margin: 0 0 0.8rem 0.8rem;
+  padding: 1.2rem;
+  button {
+    max-width: 30rem;
+    min-width: 2rem;
     font-size: 1.4rem;
     border: var(--regular-border);
     background-color: var(--purple-color);
     color: var(--cream-color);
     padding: 0.4rem;
   }
+    input {
+    border: var(--regular-border) var(--carbon-black);
+    margin: 0.8rem 0;
+    font-size: 1.6rem;
+    min-height: 3rem;
+    max-width: 30rem;
+  }
 }
 
-#search {
-  border: var(--regular-border) var(--carbon-black);
-  margin: 0.8rem;
-  font-size: 1.6rem;
-  min-height: 3rem;
-  max-width: 30rem;
-}
+
 .sport-cards {
   display: grid;
   padding: 1.2rem;
@@ -252,7 +296,7 @@ label[for="search"] {
 .form-container {
   display: grid;
   justify-content: center;
-  button{
+  button {
     font-size: 1.4rem;
     margin: 1.2rem 0;
     border: var(--regular-border) var(--carbon-black);
@@ -277,7 +321,7 @@ fieldset {
     color: var(--submit-text);
     font-size: 0.8rem;
   }
-  input{
+  input {
     font-size: 1.4rem;
     border: var(--regular-border);
     min-height: 3rem;
