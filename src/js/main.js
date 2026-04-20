@@ -27,7 +27,7 @@ allNav.forEach((navA) => {
       allNav.forEach((nav) => nav.classList.remove("pathfinder"));
       navA.classList.add("pathfinder");
       displayHeroPhotos();
-      displayHomeCards();
+      //displayHomeCards();
     } else if (navA.classList.contains("contact-Us")) {
       allNav.forEach((nav) => nav.classList.remove("pathfinder"));
       navA.classList.add("pathfinder");
