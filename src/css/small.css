@@ -19,6 +19,17 @@
   font-family: "Lato" sans-serif;
 }
 
+@keyframes shatter {
+  0% { transform: scale(1); opacity: 0; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.hero-container img:hover {
+  animation: shatter 1s ease-in-out;
+}
+
+
+
 @keyframes slide {
   from {
     transform: translate(100%);
@@ -147,7 +158,6 @@ main img {
 
 .hero-container img:hover {
   transform: rotateY(360deg);
-  border-radius: 20%;
 }
 main h1 {
   animation: slide 6s ease-in-out;
@@ -394,6 +404,7 @@ fieldset legend {
     font-size: 1.4rem;
     text-align: center;
   }
+  animation: slide 6s ease-in-out;
 }
 
 footer {
