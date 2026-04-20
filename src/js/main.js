@@ -8,6 +8,7 @@ import displayTeamSqad from "./displayTeamSqad.mjs";
 import displayContactUsPage from "./contactUsPage.mjs";
 import displayFormItems from "./displayFormItems.mjs";
 import { displayStanding } from "./DisplaySportCards.mjs";
+import saveFormToStorage from "./saveFormToStorage.mjs";
 
 
 const allNav = document.querySelectorAll("a");
@@ -31,6 +32,7 @@ allNav.forEach((navA) => {
       navA.classList.add("pathfinder");
       displayContactUsPage();
       displayFormItems();
+      saveFormToStorage();
     }
   });
 });
