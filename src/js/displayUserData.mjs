@@ -29,6 +29,7 @@ export default async function displayFormData() {
         main.appendChild(lastName);
         main.appendChild(emailP);
         main.appendChild(teamp);
+        main.classList.add("formdata");
     } else {
         main.innerHTML = `<p><strong> No data recieved! </strong> </P`;
     }

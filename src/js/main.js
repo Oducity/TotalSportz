@@ -10,7 +10,13 @@ import displayFormItems from "./displayFormItems.mjs";
 import { displayStanding } from "./DisplaySportCards.mjs";
 import saveFormToStorage from "./saveFormToStorage.mjs";
 import displayFormData from "./displayUserData.mjs";
+import { displaySearchResult } from "./displaySearch.mjs";
 
+
+
+const searchBtn = document.getElementById("search-btn");
+const myModal = document.getElementById("mymodal");
+const closeBtn = document.getElementById("close-dialog");
 
 const allNav = document.querySelectorAll("a");
 allNav.forEach((navA) => {
@@ -23,11 +29,21 @@ allNav.forEach((navA) => {
       displayStanding();
       displayAllLeagues();
       displayTeamSqad();
+      //listen to click event and display modal
+      //searchBtn.addEventListener("click", () => {
+      //  displaySearchResult(document.getElementById("search").value);
+      //  myModal.showModal();
+      //});
+      ////listen to click event and close modal
+      //closeBtn.addEventListener("click", () => {
+      //  myModal.close();
+      //})
+
     } else if (navA.classList.contains("home")) {
       allNav.forEach((nav) => nav.classList.remove("pathfinder"));
       navA.classList.add("pathfinder");
       displayHeroPhotos();
-      displayHomeCards();
+      //displayHomeCards();
     } else if (navA.classList.contains("contact-Us")) {
       allNav.forEach((nav) => nav.classList.remove("pathfinder"));
       navA.classList.add("pathfinder");
@@ -44,7 +60,7 @@ allNav.forEach((navA) => {
 if (document.getElementById("home")) {
   document.getElementById("home").classList.add("pathfinder");
   displayHeroPhotos();
-  displayHomeCards();
+  //displayHomeCards();
 }
 
 lastModify();

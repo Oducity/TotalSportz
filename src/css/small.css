@@ -396,12 +396,12 @@ fieldset legend {
 }
 
 /*************************Thank-you page*****************************/
-.thanks {
+.formdata {
   justify-content: center;
   row-gap: .8rem;
 
   p {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     text-align: center;
   }
   animation: slide 6s ease-in-out;
