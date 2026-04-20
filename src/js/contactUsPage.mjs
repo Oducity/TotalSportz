@@ -24,7 +24,7 @@ export default async function displayContactUsPage() {
 
                 <fieldset>
                     <legend>Teams Option</legend>
-                    <label for="preferred-team">
+                    <label for="preferredteam">
                         <span>Select Your Prefered League:<strong class="req">&#10033;</strong></span>
                         <select id="preferred-team" name="preferred-team" class="preferred-team">
                             <option>Select Your Team</option>
@@ -32,7 +32,7 @@ export default async function displayContactUsPage() {
                     </label>
                 </fieldset>
                 <label for="submitted">
-                    <button type="submit" name="submit" class="submit">Register Me</button>
+                    <button type="submit" name="submit" class="submit" id="form-submit">Register Me</button>
                 </label>
             </form>
         </div>
