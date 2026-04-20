@@ -9,6 +9,7 @@ export default async function displaySoccerCountries() {
 
   //Pass all parameters to the getApiData().
   const data = await getApiData(host, endPoint, myKey, fileType);
+  console.log(data);
 
   const allCountries = document.createElement("section");
   allCountries.setAttribute("class", "all-countries");

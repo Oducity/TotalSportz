@@ -116,7 +116,7 @@ nav ul {
   border-radius: var(--allborder-radius);
 }
 
-.nav-list{
+.nav-list {
   animation: slide 6s ease-in-out;
 }
 
@@ -143,7 +143,6 @@ main img {
 .hero-container img {
   transition: transform 4s;
   transform-style: preserve-3d;
-  
 }
 
 .hero-container img:hover {
@@ -384,6 +383,17 @@ select {
 
 fieldset legend {
   font-size: 1.6rem;
+}
+
+/*************************Thank-you page*****************************/
+.thanks {
+  justify-content: center;
+  row-gap: .8rem;
+
+  p {
+    font-size: 1.4rem;
+    text-align: center;
+  }
 }
 
 footer {
