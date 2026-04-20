@@ -68,7 +68,7 @@
         <div id="dialog-box" class="dialog-box"></div>
         <button id="close-dialog" class="close-dialog" type="button"></button>
     <dialog>
-    `}async function s(){let e=await i(`free-api-live-football-data.p.rapidapi.com`,`/football-get-all-countries`,`d5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686`,`application/json`),t=document.createElement(`section`);t.setAttribute(`class`,`all-countries`),t.setAttribute(`id`,`all-countries`),t.innerHTML=``;let n=document.createElement(`h2`);n.innerText=`All Soccer Nations`,t.appendChild(n),e.response.countries.forEach(e=>{let n=document.createElement(`div`);n.innerHTML=`<p><span class="country-name"> ${e.name} </span> : <span class="country-code"> ${e.ccode}</span></p>`,t.appendChild(n)}),document.querySelector(`#sport-cards`).appendChild(t)}async function c(){let e=await i(`free-api-live-football-data.p.rapidapi.com`,`/football-get-standing-all?leagueid=47`,`d5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686`,`application/json`),t=document.createElement(`section`);t.setAttribute(`class`,`fixtures`),t.setAttribute(`id`,`fixtures`);let n=document.createElement(`h2`);n.innerText=`Fixture`,t.appendChild(n),e.response.standing.forEach(e=>{let n=e.scoresStr.split(`-`),r=n[0],i=n[1],a=document.createElement(`div`);a.setAttribute(`class`,`fixture-box`),a.id=`fixture-box`,a.innerHTML=`
+    `}async function s(){let e=await i(`free-api-live-football-data.p.rapidapi.com`,`/football-get-all-countries`,`d5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686`,`application/json`);console.log(e);let t=document.createElement(`section`);t.setAttribute(`class`,`all-countries`),t.setAttribute(`id`,`all-countries`),t.innerHTML=``;let n=document.createElement(`h2`);n.innerText=`All Soccer Nations`,t.appendChild(n),e.response.countries.forEach(e=>{let n=document.createElement(`div`);n.innerHTML=`<p><span class="country-name"> ${e.name} </span> : <span class="country-code"> ${e.ccode}</span></p>`,t.appendChild(n)}),document.querySelector(`#sport-cards`).appendChild(t)}async function c(){let e=await i(`free-api-live-football-data.p.rapidapi.com`,`/football-get-standing-all?leagueid=47`,`d5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686`,`application/json`),t=document.createElement(`section`);t.setAttribute(`class`,`fixtures`),t.setAttribute(`id`,`fixtures`);let n=document.createElement(`h2`);n.innerText=`Fixture`,t.appendChild(n),e.response.standing.forEach(e=>{let n=e.scoresStr.split(`-`),r=n[0],i=n[1],a=document.createElement(`div`);a.setAttribute(`class`,`fixture-box`),a.id=`fixture-box`,a.innerHTML=`
             <P class="club-name"> ${e.shortName}</p>
             <p><span>Position</span> : <span>${e.idx}</span></p>
             <p><span>Points</span> : <span>${e.pts}</span></p>
@@ -102,7 +102,7 @@
         <h1>${document.querySelector(`#contact-Us`).textContent}</h1>
         <p>Register with us to get latest update on sport. Simple, enter your first name, last name and your email address. After that, select your preferred league of interest and hit the register me button. Boom, you start receiving updates at your convenience. It's as simple as that.</p>
         <div class="form-container">
-            <form action="thanks.html" method="GET" id="reg-form" class="reg-form">
+            <form action="../thanks.html" method="GET" id="reg-form" class="reg-form">
                 <h2>Registration Form</h2>
                 <fieldset>
                     <legend>Customer's Information</legend>
@@ -129,9 +129,9 @@
                         </select>
                     </label>
                 </fieldset>
-                <label for="submit">
-                    <button type="submit" name="submit" id="submit" class="submit">Register Me</button>
+                <label for="submitted">
+                    <button type="submit" name="submit" class="submit">Register Me</button>
                 </label>
             </form>
         </div>
-    `}async function f(){let e=await i(`free-api-live-football-data.p.rapidapi.com`,`/football-get-all-leagues`,`d5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686`,`application/json`),t=document.getElementById(`preferred-team`);e.response.leagues.forEach(e=>{let n=document.createElement(`option`);n.value=e.id,n.innerText=e.name,t.appendChild(n)})}var p=document.querySelectorAll(`a`);p.forEach(e=>{e.addEventListener(`click`,()=>{e.classList.contains(`sports`)?(p.forEach(e=>e.classList.remove(`pathfinder`)),e.classList.add(`pathfinder`),o(),s(),c(),l(),u()):e.classList.contains(`home`)?(p.forEach(e=>e.classList.remove(`pathfinder`)),e.classList.add(`pathfinder`),r(),a()):e.classList.contains(`contact-Us`)&&(p.forEach(e=>e.classList.remove(`pathfinder`)),e.classList.add(`pathfinder`),d(),f())})}),document.getElementById(`home`)&&(document.getElementById(`home`).classList.add(`pathfinder`),r(),a()),e(),t();
+    `}async function f(){let e=await i(`free-api-live-football-data.p.rapidapi.com`,`/football-get-all-leagues`,`d5e371912emshe979d50bdbd81f0p15c7c5jsn0e0e5bdbf686`,`application/json`),t=document.getElementById(`preferred-team`);e.response.leagues.forEach(e=>{let n=document.createElement(`option`);n.value=`${e.id} : ${e.name}`,n.innerText=e.name,t.appendChild(n)})}var p=document.querySelectorAll(`a`);p.forEach(e=>{e.addEventListener(`click`,()=>{e.classList.contains(`sports`)?(p.forEach(e=>e.classList.remove(`pathfinder`)),e.classList.add(`pathfinder`),o(),s(),c(),l(),u()):e.classList.contains(`home`)?(p.forEach(e=>e.classList.remove(`pathfinder`)),e.classList.add(`pathfinder`),r(),a()):e.classList.contains(`contact-Us`)&&(p.forEach(e=>e.classList.remove(`pathfinder`)),e.classList.add(`pathfinder`),d(),f())})}),document.getElementById(`home`)&&(document.getElementById(`home`).classList.add(`pathfinder`),r(),a()),e(),t();
