@@ -9,6 +9,7 @@ import displayContactUsPage from "./contactUsPage.mjs";
 import displayFormItems from "./displayFormItems.mjs";
 import { displayStanding } from "./DisplaySportCards.mjs";
 import saveFormToStorage from "./saveFormToStorage.mjs";
+import displayFormData from "./displayUserData.mjs";
 
 
 const allNav = document.querySelectorAll("a");
@@ -33,6 +34,9 @@ allNav.forEach((navA) => {
       displayContactUsPage();
       displayFormItems();
       saveFormToStorage();
+      document.getElementById("form-submit").addEventListener("click", () => {
+        displayFormData();
+      });
     }
   });
 });

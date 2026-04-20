@@ -10,6 +10,5 @@ export default async function saveFormToStorage(params) {
             team: document.getElementById("preferred-team").value
         };
         localStorage.setItem("userData", JSON.stringify(formData));
-        alert("Registration information received!");
     });
 }
