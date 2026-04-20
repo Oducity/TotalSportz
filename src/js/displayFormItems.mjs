@@ -12,7 +12,7 @@ export default async function displayFormItems() {
 
     data.response.leagues.forEach((league) => {
         const option = document.createElement("option");
-        option.value = league.id;
+        option.value = `${league.id} : ${league.name}`;
         option.innerText = league.name;
         preferredTeam.appendChild(option);
      })

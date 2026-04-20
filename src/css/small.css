@@ -19,6 +19,17 @@
   font-family: "Lato" sans-serif;
 }
 
+@keyframes shatter {
+  0% { transform: scale(1); opacity: 0; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.hero-container img:hover {
+  animation: shatter 1s ease-in-out;
+}
+
+
+
 @keyframes slide {
   from {
     transform: translate(100%);
@@ -116,7 +127,7 @@ nav ul {
   border-radius: var(--allborder-radius);
 }
 
-.nav-list{
+.nav-list {
   animation: slide 6s ease-in-out;
 }
 
@@ -143,12 +154,10 @@ main img {
 .hero-container img {
   transition: transform 4s;
   transform-style: preserve-3d;
-  
 }
 
 .hero-container img:hover {
   transform: rotateY(360deg);
-  border-radius: 20%;
 }
 main h1 {
   animation: slide 6s ease-in-out;
@@ -384,6 +393,18 @@ select {
 
 fieldset legend {
   font-size: 1.6rem;
+}
+
+/*************************Thank-you page*****************************/
+.thanks {
+  justify-content: center;
+  row-gap: .8rem;
+
+  p {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  animation: slide 6s ease-in-out;
 }
 
 footer {

@@ -4,7 +4,7 @@ export default async function displayContactUsPage() {
         <h1>${document.querySelector("#contact-Us").textContent}</h1>
         <p>Register with us to get latest update on sport. Simple, enter your first name, last name and your email address. After that, select your preferred league of interest and hit the register me button. Boom, you start receiving updates at your convenience. It's as simple as that.</p>
         <div class="form-container">
-            <form action="thanks.html" method="GET" id="reg-form" class="reg-form">
+            <form action="../thanks.html" method="GET" id="reg-form" class="reg-form">
                 <h2>Registration Form</h2>
                 <fieldset>
                     <legend>Customer's Information</legend>
@@ -31,8 +31,8 @@ export default async function displayContactUsPage() {
                         </select>
                     </label>
                 </fieldset>
-                <label for="submit">
-                    <button type="submit" name="submit" id="submit" class="submit">Register Me</button>
+                <label for="submitted">
+                    <button type="submit" name="submit" class="submit">Register Me</button>
                 </label>
             </form>
         </div>
