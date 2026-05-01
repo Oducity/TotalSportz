@@ -43,7 +43,7 @@ allNav.forEach((navA) => {
       allNav.forEach((nav) => nav.classList.remove("pathfinder"));
       navA.classList.add("pathfinder");
       displayHeroPhotos();
-      //displayHomeCards();
+      displayHomeCards();
     } else if (navA.classList.contains("contact-Us")) {
       allNav.forEach((nav) => nav.classList.remove("pathfinder"));
       navA.classList.add("pathfinder");
@@ -60,7 +60,7 @@ allNav.forEach((navA) => {
 if (document.getElementById("home")) {
   document.getElementById("home").classList.add("pathfinder");
   displayHeroPhotos();
-  //displayHomeCards();
+  displayHomeCards();
 }
 
 lastModify();
